@@ -90,7 +90,7 @@ const Formulario = () => {
       </div>
       <form
         onSubmit={handleSubmit}
-        className="md:w-1/2 max-w-lg container mx-auto md:flex md:flex-col justify-center p-0 md:mt-24"
+        className="md:w-1/2 max-w-lg container mx-auto md:flex md:flex-col justify-center p-0 md:mt-24 mt-16"
       >
         {error && (
           <div>
@@ -224,7 +224,7 @@ const Formulario = () => {
         <div className="flex justify-between items-center ">
           <div className="w-full mt-4">
             <input
-              // onClick={makeOrder}
+              onClick={makeOrder}
               type="submit"
               value="Proceder al Pago"
               className="uppercase bg-primary flex p-4 justify-center items-center text-white w-full font-medium hover:bg-gray-600 cursor-pointer transition-all"

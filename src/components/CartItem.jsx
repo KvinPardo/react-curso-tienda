@@ -23,10 +23,10 @@ const CartItem = ({ item }) => {
             />
           </Link>
         </div>
-        <div className="w-1/3 md:px-40">
-          <span className="">
+        <div className="w-1/3 md:px-40 mx-auto md:ml-0 md:mr-0 p-2">
+          <p className="text-center ">
             {name}
-          </span>
+          </p>
         </div>
         <div className="flex h-[36px] text-sm justify-center px-4">
           {/* qty */}
