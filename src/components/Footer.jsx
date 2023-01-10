@@ -4,7 +4,7 @@ import {FaFacebookSquare, FaInstagram, FaTwitterSquare, FaWhatsappSquare } from 
 
 const Footer = () => {
   return (
-    <footer className="bg-[#f1eae4]">
+    <footer className="bg-[#f1eae4] mt-[250px] md:mt-0">
       <div className="container mx-auto py-16 px-4 grid lg:grid-cols-3 gap-8 text-gray-300 mt-[20px] md:mt-0 ">
         <div className="text-primary">
           <h1 className="w-full text-3xl font-bold">Pía Bordados</h1>
