@@ -95,6 +95,33 @@ const Navbar = () => {
             </div>
           </div>
         </Link>
+
+
+        {/* Mobile Menú */}
+      <ul
+        className={
+          !nav
+            ? "hidden"
+            : "absolute top-0  left-0 w-full h-screen bg-white flex flex-col justify-center items-center"
+        }
+      >
+        <li className="py-4 text-4xl ">
+          <Link to="/" smooth={true} duration={500} onClick={handleClick}>
+            Inicio
+          </Link>
+        </li>
+          
+        <li className="py-4 text-4xl">
+          <Link to="servicios" smooth={true} duration={500} onClick={handleClick}>
+            Servicios
+          </Link>
+        </li>
+        <li className="py-4 text-4xl">
+          <Link to="contacto" smooth={true} duration={500} onClick={handleClick}>
+            Contacto
+          </Link>
+        </li>
+      </ul>
         
       </div>
     </nav>
