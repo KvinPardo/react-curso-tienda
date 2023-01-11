@@ -35,7 +35,7 @@ const Formulario = () => {
 
     setError(false);
     makeOrder();
-    navigate('/')
+    navigate(`/compra-exitosa`)
   };
 
   const makeOrder = () => {
