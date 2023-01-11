@@ -1,5 +1,5 @@
 import React, { useState, useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { CartContext } from "../context/CartContext";
 import { IoMdArrowBack } from "react-icons/io";
 import {
@@ -20,6 +20,7 @@ const Formulario = () => {
   const [pais, setPais] = useState("");
   const [codigo, setCodigo] = useState("");
   const [error, setError] = useState(false);
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -33,7 +34,8 @@ const Formulario = () => {
     }
 
     setError(false);
-    makeOrder()
+    makeOrder();
+    navigate('/')
   };
 
   const makeOrder = () => {
@@ -56,7 +58,7 @@ const Formulario = () => {
     const db = getFirestore();
     const orderCollection = collection(db, "orders");
     const id = await addDoc(orderCollection, order);
-    console.log("Nueva orden: ", id);
+    // console.log("Nueva orden: ", id);
   };
 
   return (
@@ -94,7 +96,7 @@ const Formulario = () => {
       >
         {error && (
           <div>
-            <p className="bg-red-800 text-white uppercase text-center p-2 font-bold mb-3 rounded">
+            <p className="bg-red-800 text-white uppercase text-center p-2 font-bold mb-3 rounded italic">
               Todos los campos son obligatorios
             </p>
           </div>
@@ -108,7 +110,7 @@ const Formulario = () => {
               Nombre Completo
             </label>
             <input
-              className="appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+              className="appearance-none block w-full bg-gray-200 text-gray-700  rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
               id="nombre"
               type="text"
               placeholder="Kevin Pardo Veas"
@@ -116,9 +118,6 @@ const Formulario = () => {
               onChange={(e) => setNombre(e.target.value)}
               // onChange={(e) => setNombre(e.target.value)}
             />
-            <p className="text-red-500 text-xs italic">
-              Por favor llenar todos los campos
-            </p>
           </div>
           <div className="w-full md:w-1/2 px-3">
             <label
@@ -221,6 +220,7 @@ const Formulario = () => {
             />
           </div>
         </div>
+
         <div className="flex justify-between items-center ">
           <div className="w-full mt-4">
             <input
